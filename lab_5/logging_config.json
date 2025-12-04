@@ -1,0 +1,71 @@
+{
+    "version": 1,
+    "disable_existing_loggers": false,
+    "formatters": {
+        "simple": {
+            "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+        },
+        "detailed": {
+            "format": "%(asctime)s - %(name)s - %(levelname)s - %(module)s:%(lineno)d - %(funcName)s - %(message)s"
+        },
+        "audit": {
+            "format": "%(asctime)s|%(name)s|%(levelname)s|%(module)s|%(message)s"
+        }
+    },
+
+    "handlers": {
+        "console_handler": {
+            "class": "logging.StreamHandler",
+            "level": "INFO",
+            "formatter": "simple",
+            "stream": "ext://sys.stdout"
+        },
+        "file_handler": {
+            "class": "logging.FileHandler",
+            "level": "DEBUG",
+            "formatter": "detailed",
+            "filename": "calculator.log",
+            "mode": "a",
+            "encoding": "utf-8"
+        },
+        "error_file_handler": {
+            "class": "logging.FileHandler",
+            "level": "ERROR",
+            "formatter": "detailed",
+            "filename": "calculator_errors.log",
+            "mode": "a",
+            "encoding": "utf-8"
+        },
+        "audit_file_handler": {
+            "class": "logging.FileHandler",
+            "level": "INFO",
+            "formatter": "audit",
+            "filename": "calculator_audit.log",
+            "mode": "a",
+            "encoding": "utf-8"
+        }
+    },
+
+    "loggers": {
+        "calculator": {
+            "level": "DEBUG",
+            "handlers": ["console_handler", "file_handler"],
+            "propagate": false
+        },
+        "calculator.operations": {
+            "level": "INFO",
+            "handlers": ["console_handler", "audit_file_handler"],
+            "propagate": false
+        },
+        "calculator.errors": {
+            "level": "ERROR",
+            "handlers": ["error_file_handler"],
+            "propagate": false
+        }
+    },
+
+    "root": {
+        "level": "WARNING",
+        "handlers": ["console_handler"]
+    }
+}
