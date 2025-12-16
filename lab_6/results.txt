@@ -1,0 +1,16 @@
+ХОД ВЫПОЛНЕНИЯ ТЕСТОВ:
+--------------------------------------------------------------------------------
+✅ tests/test_copy_tool.py::test_copy_to_new_directory_mock PASSED (0.001 сек)
+✅ tests/test_copy_tool.py::test_create_new_dir_ann_simple PASSED (0.002 сек)
+✅ tests/test_file_utils.py::test_extract_basic PASSED (0.000 сек)
+✅ tests/test_file_utils.py::test_extract_without_extension PASSED (0.000 сек)
+✅ tests/test_file_utils.py::test_parametrized_extraction[good_0001.txt-good-0001] PASSED (0.000 сек)
+✅ tests/test_file_utils.py::test_parametrized_extraction[bad_9999.txt-bad-9999] PASSED (0.000 сек)
+✅ tests/test_file_utils.py::test_parametrized_extraction[excellent_1234.txt-excellent-1234] PASSED (0.000 сек)
+✅ tests/test_file_utils.py::test_parametrized_extraction[test_5555.txt-test-5555] PASSED (0.000 сек)
+✅ tests/test_file_utils.py::test_parametrized_extraction[invalid.txt-None-None] PASSED (0.000 сек)
+✅ tests/test_file_utils.py::test_read_file_content PASSED (0.001 сек)
+✅ tests/test_file_utils.py::test_write_file_content PASSED (0.002 сек)
+✅ tests/test_file_utils.py::test_generate_unique_filename_with_mock PASSED (0.000 сек)
+✅ tests/test_random_copy_tool.py::test_copy_with_random_names PASSED (0.004 сек)
+✅ tests/test_random_copy_tool.py::test_random_copy_tool_import PASSED (0.000 сек)
